@@ -4,65 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIFE s Ilya</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --bg: #0a0a0a;
+            --card: #111111;
+            --text: #e0e0e0;
+            --accent: #00ff9d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
         }
-        .card {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 30%, rgba(0, 255, 157, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 70%, rgba(0, 255, 157, 0.06) 0%, transparent 50%);
+            z-index: 1;
+            pointer-events: none;
         }
-        .accent {
-            color: #22c55e;
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 420px;
+            padding: 40px 24px;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #00ff9d, #00cc7a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            box-shadow: 0 0 60px rgba(0, 255, 157, 0.4);
+            font-size: 48px;
+            color: #000;
+            font-weight: 700;
+            letter-spacing: -2px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 48px;
+            line-height: 1.5;
+        }
+        
+        .join-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--accent);
+            color: #000;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 18px 42px;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(0, 255, 157, 0.3);
+            margin-bottom: 32px;
+        }
+        
+        .join-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 255, 157, 0.4);
+        }
+        
+        .tg-icon {
+            width: 28px;
+            height: 28px;
+        }
+        
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: left;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: var(--card);
+            padding: 16px 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            color: var(--accent);
+            margin-top: 2px;
+        }
+        
+        footer {
+            margin-top: 60px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
-    <div class="card max-w-md w-full rounded-3xl overflow-hidden border border-slate-700">
-        <!-- Header -->
-        <div class="h-2 bg-gradient-to-r from-green-500 to-emerald-500"></div>
+<body>
+    <div class="background"></div>
+    
+    <div class="container">
+        <div class="logo">L</div>
         
-        <div class="p-8 text-center">
-            <!-- Avatar -->
-            <div class="w-28 h-28 mx-auto rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-5xl shadow-xl">
-                👤
+        <h1>LIFE s Ilya</h1>
+        <p class="subtitle">Присоединяйся к каналу и живи полной жизнью вместе со мной</p>
+        
+        <a href="https://t.me/+dm_wRi5IfiFkYTYy" class="join-btn" target="_blank">
+            <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.944 12.122L9.5 17.5l1.5-5.5L19 4l-8.056 8.122z"/>
+                <path d="M11.944 12.122L9.5 17.5l1.5-5.5L19 4l-8.056 8.122z"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+            </svg>
+            Перейти в канал
+        </a>
+        
+        <div class="features">
+            <div class="feature">
+                <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <div>
+                    <strong>Мотивация и вдохновение</strong>
+                    <p style="opacity:0.75; font-size:14px; margin-top:4px;">Ежедневный контент про жизнь, развитие и энергию</p>
+                </div>
             </div>
             
-            <h1 class="text-4xl font-bold text-white mt-6">LIFE s Ilya</h1>
-            <p class="text-slate-400 mt-1">Личный канал</p>
-            
-            <div class="my-8 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
-            
-            <!-- Description -->
-            <p class="text-slate-300 text-lg leading-relaxed">
-                Добро пожаловать в мой мир<br>
-                <span class="accent font-medium">Жизнь • Мотивация • Развитие</span>
-            </p>
-            
-            <!-- Button -->
-            <a href="https://t.me/+dm_wRi5IfiFkYTYy" 
-               target="_blank"
-               class="mt-10 block w-full bg-green-600 hover:bg-green-500 transition-all text-white font-semibold text-xl py-5 rounded-2xl flex items-center justify-center gap-3 shadow-lg shadow-green-500/30">
-                <i class="fab fa-telegram-plane text-2xl"></i>
-                Перейти в канал
-            </a>
-            
-            <p class="text-slate-500 text-sm mt-6">
-                Нажми кнопку выше ↓
-            </p>
+            <div class="feature">
+                <svg class="feature-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 01-5.356-1.857M17 20H7m5-2v-2c0-.656-.126-1.284-.356-1.852M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.284.356-1.852m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div>
+                    <strong>Сообщество единомышленников</strong>
+                    <p style="opacity:0.75; font-size:14px; margin-top:4px;">Люди, которые хотят жить ярче</p>
+                </div>
+            </div>
         </div>
         
-        <!-- Footer -->
-        <div class="bg-slate-950 py-4 text-center">
-            <p class="text-slate-400 text-sm flex items-center justify-center gap-2">
-                <i class="fas fa-link"></i>
-                t.me/+dm_wRi5IfiFkYTYy
-            </p>
-        </div>
+        <footer>
+            LIFE s Ilya © 2026
+        </footer>
     </div>
+
+    <script>
+        // Автоматический редирект через 8 секунд
+        setTimeout(() => {
+            window.location.href = "https://t.me/+dm_wRi5IfiFkYTYy";
+        }, 8000);
+        
+        // Конфетти при клике на кнопку
+        document.querySelector('.join-btn').addEventListener('click', function(e) {
+            createConfetti();
+        });
+        
+        function createConfetti() {
+            for (let i = 0; i < 80; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                confetti.style.zIndex = '100';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10px';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.borderRadius = '50%';
+                confetti.style.background = ['#00ff9d', '#00cc7a', '#ffffff'][Math.floor(Math.random()*3)];
+                confetti.style.opacity = Math.random() + 0.5;
+                confetti.style.transform = `rotate(${Math.random()*360}deg)`;
+                document.body.appendChild(confetti);
+                
+                const animationDuration = Math.random() * 3 + 2;
+                confetti.animate([
+                    { transform: `translateY(0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translateY(${window.innerHeight + 100}px) rotate(${Math.random()*800 - 400}deg)`, opacity: 0 }
+                ], {
+                    duration: animationDuration * 1000,
+                    easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)'
+                });
+                
+                setTimeout(() => confetti.remove(), animationDuration * 1000 + 100);
+            }
+        }
+    </script>
 </body>
 </html>
