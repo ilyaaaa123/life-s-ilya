@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFE s Ilya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        .card {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+        .accent {
+            color: #22c55e;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="card max-w-md w-full rounded-3xl overflow-hidden border border-slate-700">
+        <!-- Header -->
+        <div class="h-2 bg-gradient-to-r from-green-500 to-emerald-500"></div>
+        
+        <div class="p-8 text-center">
+            <!-- Avatar -->
+            <div class="w-28 h-28 mx-auto rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-5xl shadow-xl">
+                👤
+            </div>
+            
+            <h1 class="text-4xl font-bold text-white mt-6">LIFE s Ilya</h1>
+            <p class="text-slate-400 mt-1">Личный канал</p>
+            
+            <div class="my-8 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
+            
+            <!-- Description -->
+            <p class="text-slate-300 text-lg leading-relaxed">
+                Добро пожаловать в мой мир<br>
+                <span class="accent font-medium">Жизнь • Мотивация • Развитие</span>
+            </p>
+            
+            <!-- Button -->
+            <a href="https://t.me/+dm_wRi5IfiFkYTYy" 
+               target="_blank"
+               class="mt-10 block w-full bg-green-600 hover:bg-green-500 transition-all text-white font-semibold text-xl py-5 rounded-2xl flex items-center justify-center gap-3 shadow-lg shadow-green-500/30">
+                <i class="fab fa-telegram-plane text-2xl"></i>
+                Перейти в канал
+            </a>
+            
+            <p class="text-slate-500 text-sm mt-6">
+                Нажми кнопку выше ↓
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="bg-slate-950 py-4 text-center">
+            <p class="text-slate-400 text-sm flex items-center justify-center gap-2">
+                <i class="fas fa-link"></i>
+                t.me/+dm_wRi5IfiFkYTYy
+            </p>
+        </div>
+    </div>
+</body>
+</html>
